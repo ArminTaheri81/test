@@ -60,7 +60,7 @@ def get_user_data(request: Request):
     ipArray = ip.split(".")
     for i in range(len(ipArray)):
         ipArray[i] = bin(int(ipArray[i]))[2:]
-    binIP = "".join(ipArray)[0:22]
+    binIP = "".join(ipArray)[0:23]
 
     return {
         "user": {
