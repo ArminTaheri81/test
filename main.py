@@ -54,11 +54,20 @@ def get_user_data(request: Request):
     userAgent = request.headers.get('User-Agent')
     ip = request.client.host
     port = request.client.port
+    ranges = {
+        "10111001110011101011101" : "arvan"
+    }
+
+    for i in range(len(ip)):
+        ip[i] = bin(ip[i])[2:]
+    binIP = "".join(ip)[0:22]
+
     return {
         "user": {
             "agent": userAgent,
             "ip": ip,
-            "port": port
+            "port": port,
+            "status": ranges[binIP] if binIP in ranges else "Other"
         }
     }
 
