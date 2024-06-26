@@ -59,7 +59,7 @@ def get_user_data(request: Request):
     }
 
     for i in range(len(ip)):
-        ip[i] = bin(ip[i])[2:]
+        ip[i] = bin(int(ip[i]))[2:]
     binIP = "".join(ip)[0:22]
 
     return {
