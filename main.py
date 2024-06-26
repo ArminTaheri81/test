@@ -57,10 +57,10 @@ def get_user_data(request: Request):
     ranges = {
         "10111001110011101011101" : "arvan"
     }
-
-    for i in range(len(ip)):
-        ip[i] = bin(int(ip[i]))[2:]
-    binIP = "".join(ip)[0:22]
+    ipArray = ip.split(".")
+    for i in range(len(ipArray)):
+        ipArray[i] = bin(int(ipArray[i]))[2:]
+    binIP = "".join(ipArray)[0:22]
 
     return {
         "user": {
