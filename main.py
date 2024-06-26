@@ -55,8 +55,19 @@ def get_user_data(request: Request):
     ip = request.client.host
     port = request.client.port
     ranges = {
-        "10111001110011101011101" : "arvan"
+        "10111001110011101011101" : "arvan",
+        "00000101111000100000000": "TCI",
+        "00000101111011000000000": "TCI",
+        "00100101011000100000000": "Pars Online",
+        "01011011011000100000000": "Pars Online",
+        "01010001000111111010000": "Afranet",
+        "00101110111000000000000": "Shatel",
+        "10111001011010011000100": "Shatel",
+        "00000010100100000000000": "Mobinnet",
+        "01001111101011110010000": "MTN Irancell",
+        "01011100001010100011000": "MTN Irancell"
     }
+
     ipArray = ip.split(".")
     for i in range(len(ipArray)):
         ipArray[i] = bin(int(ipArray[i]))[2:]
